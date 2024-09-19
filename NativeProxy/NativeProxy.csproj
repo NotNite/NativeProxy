@@ -10,6 +10,9 @@
 
         <RootNamespace>NativeProxy</RootNamespace>
         <PackageId>NativeProxy</PackageId>
+
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,6 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <CompilerVisibleProperty Include="NativeProxy_OriginalPath" />
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false"/>
+        <None Include="NativeProxy.props" Pack="true" PackagePath="build" Visible="false"/>
     </ItemGroup>
 </Project>
