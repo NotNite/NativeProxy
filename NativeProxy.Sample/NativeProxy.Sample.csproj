@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <PublishAot>true</PublishAot>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\NativeProxy\NativeProxy.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="NativeProxy.d3d11.txt"/>
+        <AdditionalFiles Include="NativeProxy.d3d11.txt"/>
+        <CompilerVisibleProperty Include="NativeProxy_OriginalPath" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <NativeProxy_OriginalPath>C:/Windows/System32/d3d11.dll</NativeProxy_OriginalPath>
+    </PropertyGroup>
+</Project>
